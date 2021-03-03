@@ -37,11 +37,12 @@ quotes.forEach(function(quote){
     quote.display();
     quote.tags.forEach(function(tag){
         //check to see if tag has been added to taglist
-        if(!tagList.includes(tag))
+        if(!tagList.includes(tag)){
         //if isnt added, add it
         tagList.push(tag);
         //and make a button for it
      $(".buttons").prepend("<button class='filter' id='" + tag + "'>" + tag + "</button>")
+        }
 
     })
 });
@@ -54,8 +55,8 @@ $(".filter").on("click", function(){
     $(".quote").not("." + tag).hide();
     $("." + tag).fadeIn();
     
-    $(".filter").removeClass
-    $(this).addClass(".active");
+    $("active").removeClass
+    $(this).addClass("active");
 
 })
 

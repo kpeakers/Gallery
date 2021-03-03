@@ -27,5 +27,5 @@ div > div{
 }
 
 .active {
-    color: pink;
+    background-color: pink;
 }
