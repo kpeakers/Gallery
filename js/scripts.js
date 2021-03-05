@@ -1,9 +1,9 @@
-function Quote(quoteText, author, tags, color) {
+function pics(pic, author, tags, title) {
     
-    this.quote = quoteText;
+    this.pic = pic;
     this.author = author; 
     this.tags = tags;
-    this.color = color;
+    this.title = title;
     
     this.display = function() {
         
@@ -12,30 +12,32 @@ function Quote(quoteText, author, tags, color) {
         container.addClass(tag)
     }) 
     
-    container.css("background", this.color)
-    container.addClass("quote")
+//    container.css("background", this.color)
+    container.addClass("pic")
         
-    var quoteString = "";
-    quoteString += "<p>" + this.quote + "</p>";
-    quoteString += "<cite>" + this.author + "</cite>";        
+    var picString = "";
+    picString += "<img src=" + this.pic + "</img>";
+    picString += "<cite>" + this.author + "</cite>";        
        
-    container.html(quoteString)
-    $(".quotes").prepend(container);
+    container.html(picString)
+    $(".pics").prepend(container);
+    
+    console.log("hullo")
     
     }
 
 };
 
-var quotes = [ 
-    new Quote('"We don\'t make mistakes, just happy little accidents."', "Bob Ross", ["painting", "mistakes"], "#0a3410"),
-    new Quote('"Creativity takes courage."', "Henry Matisse", ["painting", "creativity"], "#8aade6")
+var pics = [ 
+    new pic('<img src="imgs/gardens1.jpg" alt="gardens">', "Kaylee Peaked", ["fantasy", "sunset", "nature"], "Gardens"),
+    new pic('"<img src="imgs/imdone.jpg" alt="butterfly edit">', "Kaylee Peake", ["butterfly", "dark", "weird"], "imdone")
  ];
 
 //global taglist
 var tagList = []
-quotes.forEach(function(quote){
-    quote.display();
-    quote.tags.forEach(function(tag){
+pics.forEach(function(quote){
+    pics.display();
+    pics.tags.forEach(function(tag){
         //check to see if tag has been added to taglist
         if(!tagList.includes(tag)){
         //if isnt added, add it
@@ -52,7 +54,7 @@ console.log(tagList)
 $(".filter").on("click", function(){
     var tag = $(this).attr("id");
     console.log(tag)
-    $(".quote").not("." + tag).hide();
+    $(".actualPic").not("." + tag).hide();
     $("." + tag).fadeIn();
     
     $("active").removeClass
