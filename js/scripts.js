@@ -16,7 +16,7 @@ function pics(pic, author, tags, title) {
     container.addClass("pic")
         
     var picString = "";
-    picString += "<img src=" + this.pic + "</img>";
+    picString += "<img src='" + this.pic + "'>"
     picString += "<cite>" + this.author + "</cite>";        
        
     container.html(picString)
@@ -28,8 +28,8 @@ function pics(pic, author, tags, title) {
 
 };
 
-var pics = [ 
-    new pic('<img src="imgs/gardens1.jpg" alt="gardens">', "Kaylee Peaked", ["fantasy", "sunset", "nature"], "Gardens"),
+var gallery = [ 
+    new pic('<img src="imgs/gardens1.jpg" alt="gardens">', "Kaylee Peake", ["fantasy", "sunset", "nature"], "Gardens"),
     new pic('"<img src="imgs/imdone.jpg" alt="butterfly edit">', "Kaylee Peake", ["butterfly", "dark", "weird"], "imdone")
  ];
 
