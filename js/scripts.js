@@ -1,6 +1,6 @@
-function pics(pic, author, tags, title) {
+function Picture(pictureSrc, author, tags, title) {
     
-    this.pic = pic;
+    this.pictureSrc = pictureSrc;
     this.author = author; 
     this.tags = tags;
     this.title = title;
@@ -12,32 +12,31 @@ function pics(pic, author, tags, title) {
         container.addClass(tag)
     }) 
     
-//    container.css("background", this.color)
-    container.addClass("pic")
-        
+    container.addClass("picture")
+
+    //create a string containing image information
     var picString = "";
-    picString += "<img src='" + this.pic + "'>"
-    picString += "<cite>" + this.author + "</cite>";        
-       
-    container.html(picString)
-    $(".pics").prepend(container);
-    
-    console.log("hullo")
+    //the img source
+    picString += pictureSrc;
+    //append author
+    picString += "<cite>" + author + "</cite>";        
+    container.html(picString);
+    $(".pictures").prepend(container);
     
     }
 
 };
 
-var gallery = [ 
-    new pic('<img src="imgs/gardens1.jpg" alt="gardens">', "Kaylee Peake", ["fantasy", "sunset", "nature"], "Gardens"),
-    new pic('"<img src="imgs/imdone.jpg" alt="butterfly edit">', "Kaylee Peake", ["butterfly", "dark", "weird"], "imdone")
+ var pictures = [
+    new Picture('<img src="imgs/gardens1.jpg" alt="gardens">', "Kaylee Peake", ["fantasy", "sunset", "nature"], "Gardens"),
+    new Picture('<img src="imgs/imdone.jpg" alt="butterfly edit">', "Kaylee Peake", ["butterfly", "dark", "weird"], "imdone")
  ];
 
 //global taglist
 var tagList = []
-pics.forEach(function(quote){
-    pics.display();
-    pics.tags.forEach(function(tag){
+pictures.forEach(function(picture){
+    picture.display();
+    picture.tags.forEach(function(tag){
         //check to see if tag has been added to taglist
         if(!tagList.includes(tag)){
         //if isnt added, add it
@@ -51,17 +50,30 @@ pics.forEach(function(quote){
 
 console.log(tagList)
 
+var buttonToggled = false;
 $(".filter").on("click", function(){
-    var tag = $(this).attr("id");
-    console.log(tag)
-    $(".actualPic").not("." + tag).hide();
-    $("." + tag).fadeIn();
-    
-    $("active").removeClass
-    $(this).addClass("active");
-
+    buttonToggled =  !buttonToggled;
+    if(buttonToggled == true) {
+        console.log("pressed");
+          var tag = $(this).attr("id");
+            console.log(tag);
+            $(".picture").not("." + tag).hide();
+            $("." + tag).fadeIn();
+            
+            $("active").removeClass;
+            $(this).addClass("active");
+    }
+    else {
+        console.log("UN pressed");
+        var tag = $(this).attr("id");
+            console.log(tag);
+            $(".picture").not("." + tag).show();
+            $("." + tag).fadeIn();
+            
+            $("active").removeClass;
+           $(this).removeClass("active");
+    }
 })
-
 
 
 var img1 = {
