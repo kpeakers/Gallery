@@ -1,3 +1,9 @@
+@font-face {
+  font-family: "DotGothic16";
+  src: url("/fonts/DotGothic16-regular.ttf") format("ttf");
+}
+
+
 *{
 	box-sizing: border-box;
 }
@@ -36,6 +42,21 @@ img {
     
 }
 
+button {
+    background-color: black;
+    color: white;
+    
+    border: none; 
+    margin: 5px;
+    
+    padding: 10px;
+    
+    font-family: "DotGothic16";
+    letter-spacing: 2px;
+     
+}
+
+
 .pictures {
     display: block;
     padding-top: 3rem;
@@ -57,4 +78,22 @@ div > div{
 
 .active {
     background-color: darkturquoise;
+}
+
+@media only screen and (max-width: 1400px) {
+    img {
+        padding-left: 0%;
+        max-width: 100vw;
+        
+        padding: 0;
+    }
+    
+    cite {
+        padding: 0px;
+    }
+    
+    .buttons {
+        display: flex;
+        left: 0%;
+    }
 }
