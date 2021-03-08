@@ -3,29 +3,58 @@
 }
 
 body, html {
+    background-image: url(../imgs/bg.jpg);
+    
+/*    https://www.pexels.com/photo/white-and-black-abstract-painting-4705933/*/
+    
 	min-height: 100vh;
+    max-width: 100vw;
 	margin: 0;
 
-	font-family: cursive;
-
+	font-family: 'DotGothic16', sans-serif;
+    font-size: 1.5em;
+    line-height: 40px;
+    
+    color: black;
+    
+    display: flex;
+    flex-wrap: wrap;
 }
 
 img {
-	max-width: 100%;
+	max-width: 1500%;
+    max-height: 70vh;
+    
+    padding-left: 50%;
+
 }
 
-.quotes {
-    color: white;
-    display: flex;
-    font-size: 1.5rem;
+.buttons {
+   position: absolute;
+   left: 35%;
+   bottom: 95%;
+    
 }
 
-div > div{
-    width: 250px;
-    height: 250px;
+.pictures {
+    display: block;
+    padding-top: 3rem;
+}
+
+cite {
     padding: 20px;
 }
 
+h1 {
+    font-size: 0.8rem;
+}
+
+div > div{
+   min-width: 10vw;
+    padding: 1rem;
+}
+
+
 .active {
-    background-color: pink;
+    background-color: darkturquoise;
 }

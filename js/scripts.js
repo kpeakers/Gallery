@@ -19,7 +19,9 @@ function Picture(pictureSrc, author, tags, title) {
     //the img source
     picString += pictureSrc;
     //append author
-    picString += "<cite>" + author + "</cite>";        
+    picString += "<br><cite>" + author + "</cite>";   
+    picString += "<p>" + title + "</p>";
+    picString += "<h1>" + tags + "</h1>";
     container.html(picString);
     $(".pictures").prepend(container);
     
@@ -28,8 +30,16 @@ function Picture(pictureSrc, author, tags, title) {
 };
 
  var pictures = [
-    new Picture('<img src="imgs/gardens1.jpg" alt="gardens">', "Kaylee Peake", ["fantasy", "sunset", "nature"], "Gardens"),
-    new Picture('<img src="imgs/imdone.jpg" alt="butterfly edit">', "Kaylee Peake", ["butterfly", "dark", "weird"], "imdone")
+    new Picture('<img src="imgs/gardens1.jpg" alt="gardens">', "Kaylee Peake", ["fantasy", "scenic", "nature"], "Gardens"),
+    new Picture('<img src="imgs/imdone.jpg" alt="butterfly edit">', "Kaylee Peake", ["butterfly", "dark", "weird"], "imdone"),
+    new Picture('<img src="imgs/planet.jpg" alt="planet edit">', "Kaylee Peake", ["planet", "space", "weird"], "Blue Planet"), 
+     new Picture('<img src="imgs/planet2.jpg" alt="plnet edit">', "Kaylee Peake", ["planet", "space", "nature"], "They're Moons"),
+     new Picture('<img src="imgs/planet3.jpg" alt="planet edit">', "Kaylee Peake", ["nature", "planet", "space"], "Make an Alien Out of You"),
+     new Picture('<img src="imgs/poorchid.jpg" alt="flower edit">', "Kaylee Peake", ["flower", "weird", "dark"], "Poorchid"),
+     new Picture('<img src="imgs/rose.jpg" alt="flower edit">', "Kaylee Peake", ["flower", "nature", "dark"], "Rose"),
+     new Picture('<img src="imgs/scene1.jpg" alt="nature edit">', "Kaylee Peake", ["nature", "scenic", "fantasy"], "Valley"),
+     new Picture('<img src="imgs/scene2.jpg" alt="nature edit">', "Kaylee Peake", ["flower", "weird", "nature"], "So Fluffy I'm Gonna Die"),
+     new Picture('<img src="imgs/scene3.jpg" alt="flower edit">', "Kaylee Peake", ["flower", "fantasy", "nature"], "i c e"),
  ];
 
 //global taglist
@@ -52,34 +62,34 @@ console.log(tagList)
 
 var buttonToggled = false;
 $(".filter").on("click", function(){
-    buttonToggled =  !buttonToggled;
-    if(buttonToggled == true) {
-        console.log("pressed");
-          var tag = $(this).attr("id");
+//    buttonToggled =  !buttonToggled;
+//    if(buttonToggled == true) {
+//        console.log("pressed");
+//          var tag = $(this).attr("id");
+//            console.log(tag);
+//            $(".picture").not("." + tag).hide();
+//            $("." + tag).fadeIn();
+//            
+//            $(".active").removeClass;
+//            $(this).addClass("active");
+//    }
+//    else {
+        console.log("UN pressed");
+        var tag = $(this).attr("id");
             console.log(tag);
             $(".picture").not("." + tag).hide();
             $("." + tag).fadeIn();
             
-            $("active").removeClass;
-            $(this).addClass("active");
-    }
-    else {
-        console.log("UN pressed");
-        var tag = $(this).attr("id");
-            console.log(tag);
-            $(".picture").not("." + tag).show();
-            $("." + tag).fadeIn();
-            
-            $("active").removeClass;
-           $(this).removeClass("active");
-    }
+            $(".active").removeClass("active");
+           $(this).addClass("active");
+//    }
 })
 
 
 var img1 = {
     title: "Garden",
     author: "Kaylee Peake",
-    tags: "fantasy, sunset, nature"
+    tags: "fantasy, scenic, nature"
     
 };
 
@@ -107,7 +117,7 @@ var img4 = {
 var img5 = {
     title: "Make an alien out of you",
     author: "Kaylee Peake",
-    tags: "fantasy, space, nature"
+    tags: "nature, planet, space"
     
 };
 
@@ -133,7 +143,7 @@ var img8 = {
 };
 
 var img9 = {
-    title: "So fluffy I'm gonna die.",
+    title: "So Fluffy I'm Gonna Die.",
     author: "Kaylee Peake",
     tags: "flower, weird, nature"
     
