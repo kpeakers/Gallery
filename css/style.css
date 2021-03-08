@@ -93,7 +93,14 @@ div > div{
     }
     
     .buttons {
-        display: flex;
+        display: inline-flex;
         left: 0%;
+    }
+    
+    button {
+        padding: 2px;
+        margin: 1px;
+        
+        max-width: 112vw;
     }
 }
